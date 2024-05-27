@@ -43,6 +43,10 @@ else if (human.toLowerCase() === "scissors") {
 else {alert('not a valid choice, please type rock, paper or scissors') ; }
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
+
 
 
 // ask user for choice 
