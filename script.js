@@ -1,4 +1,4 @@
-console.log('Hello world') ;
+console.log('Open the console to play rock, paper, scissors') ;
 
 // write a code that will randomly return rock paper or scissors 
 
@@ -21,25 +21,42 @@ console.log('Hello world') ;
 
 
 
- function getComputerChoice(min=1,max=3) {
+ function getComputerChoice() {
+    min=1,max=3;
+    let outcome; 
     let result = Math.floor(Math.random() * (max-min +1) + min); // gets random number between default parameters 1 and 3
   
-if (result == 1) {return "rock" ; } // if result = 1 print 'rock'
+if (result == 1) {
+    console.log(result);
+    outcome = "rock";
+    return outcome ; } // if result = 1 print 'rock'
 
-else if (result==2) {return 'paper' ;} // if result = 2 print 'paper'
-else {return 'scissors'} ; // else (meaning if result = 3) print 'scissors'
+else if (result==2) 
+    {
+        console.log(result);
+    outcome = "paper";
+ return outcome ;} // if result = 2 print 'paper'
+
+else {
+    outcome = "scissors" 
+    console.log(result);;
+     return outcome; } ; // else (meaning if result = 3) print 'scissors'
 }
 
 
 function getHumanChoice() {
 let human = prompt("What\'s your weapon of choice?", "rock, paper or scissors");
-
+let answer; 
 if (human.toLowerCase() === "rock") 
-    {return "rock" ; }
+    {answer = 'rock' ; 
+        return answer;
+    }
 else if (human.toLowerCase() === "paper") {
-    return "paper" ; } 
+    answer = "paper"; 
+    return answer; } 
 else if (human.toLowerCase() === "scissors") {
-    return "scissors" ; }
+    answer = "scissors" ;
+    return answer ; }
 else {alert('not a valid choice, please type rock, paper or scissors') ; }
 }
 
