@@ -112,7 +112,6 @@ function playRound (humanChoice,computerChoice) {
 
 
 
-
 // -  The function needs to reset the humanChoice and computerChoice of first round. 
 function playGame() { 
     for (var i = 1; i < 6; i++) { // for (var i = 0; i < 5; i++)
@@ -122,18 +121,17 @@ function playGame() {
     console.log(`Round ${i} complete.`)
     }
    if (humanScore > computerScore) { 
-    console.log(`You win :) Human: ${humanScore} vs Computer: ${computerScore}.`) ;
+    return `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ;
    }
    else if ( humanScore < computerScore) { 
-    console.log(`You lose :( Human: ${humanScore} vs. Computer: ${computerScore}`) ;
+    return `You lose :( Human: ${humanScore} vs. Computer: ${computerScore}` ;
    }
    else if (humanScore == computerScore) {
-    console.log(`It\'s a draw :| Human: ${humanScore} vs. Computer: ${computerScore}. No winners today. call the playGame() function to start a new game`) ;
+     return `It\'s a draw :| Human: ${humanScore} vs. Computer: ${computerScore}. No winners today. call the playGame() function to start a new game.` ;
    }
     
   
 }
-
 
 
 // why is it asking me for my weapon of choice twice for each round, but only noting down the second time. 
