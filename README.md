@@ -22,4 +22,9 @@ What would you do differently?
 How will you change the way you approach things? 
 - Stay within your means and while I'm still learning, focus on doing what the assignment asks, rather than immediately trying to  make the project work holistically with additional user features (with this one, worrying about how the "human choose weapon" prompt comes on immediately and how that would work as it can block the console/opening dev tools, but this was only during the work on the 2nd function, where it actually turned out that the problem resolved itself towards the end of the assignment. !TRUST THE PROCESS!
 - Understand the problem first, before even trying to write any code. Use the UNDERSTAND, PLAN, PSEUDOCODE process.
+
+UI REFLECTIONS: 
+- Because of the multiple logs I made directly in each play round option, this made my code very manual when it came to future revisions. Possible solution > Store any result/code of an if/else condition in a variable, then at the end set the value of the variable to an element and append once, rather than having to manually append after each choice.
+- I was aware that the method I am doing is not efficient but wanted to make sure i understand each one first. There is definitely a more efficient way to rewerite the code, using event delegation. I will do aim to refactor this now for the code to be more efficient.
+- I have not added much styling to the interface, as though this is very good practice, to utilise my time best, I am focusing primarily on the logic and learnings of the lessons related to the project. Then once I have this locked down I can practice adding in more advanced styles. 
   
