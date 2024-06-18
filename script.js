@@ -1,6 +1,6 @@
 
-alert(`The game will be played in the console. Open the console, type: 'playGame()'. A new pop up will appear, initiating the first round of the game.`) //creates a pop telling the user to open the console to start the game. 
-// write a code that will randomly return rock paper or scissors 
+// alert(`The game will be played in the console. Open the console, type: 'playGame()'. A new pop up will appear, initiating the first round of the game.`) //creates a pop telling the user to open the console to start the game. 
+// // write a code that will randomly return rock paper or scissors 
 
 
 // function getComputerChoice() {
@@ -63,111 +63,159 @@ else  {alert('not a valid choice, please type rock, paper or scissors') ; }
 let humanScore = 0;
 let computerScore = 0;
 
+let humanChoice ;
+
+
+
+
 function playRound (humanChoice,computerChoice) { 
+
+    const scores = document.querySelector("#scores");
 
     if (humanChoice == "rock" && computerChoice == "scissors") {
         ++humanScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You win! Rock beats scissors`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+        
+        const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You win! Rock beats scissors. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
+    
+        
     }
     else if (humanChoice == "rock" && computerChoice == "paper") {
         ++computerScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You lose! Paper beats rock.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+        const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You lose! Paper beats rock. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
+    
     }
     else if (humanChoice == "paper" && computerChoice == "rock") {
         ++humanScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You win! Paper beats rock.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+       const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You win! Paper beats rock. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
     }
+
     else if (humanChoice == "paper" && computerChoice == "scissors") {
         ++computerScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You lose! Scissors beats paper.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+        const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You lose! Scissors beats paper. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
     }
     else if (humanChoice == "scissors" && computerChoice == "paper") {
         ++humanScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You win! Scissors beats paper.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+       const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You win! Scissors beats paper. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
     }
+    
     else if (humanChoice == "scissors" && computerChoice == "rock") {
         ++computerScore;
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`You lose! Scissors beats rock.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+        const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    You lose! Scissors beats rock. Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
     }
     else if (humanChoice == computerChoice) {
         
         console.log(`You chose ${humanChoice}. The computer chose ${computerChoice}.`) ;
         console.log(`It\'s a draw.`);
         console.log(`Your score: ${humanScore}. Computer score: ${computerScore}.`) ;
+
+        const para = document.createElement("p");
+        para.textContent = `You chose ${humanChoice}. The computer chose ${computerChoice}.
+    It\'s a draw.Your score: ${humanScore}. Computer score: ${computerScore}. `;
+    scores.appendChild(para);
+    }
+showScore();
+}
+
+function showScore () { 
+    const finalScore = document.createElement("h3");
+   
+    if (humanScore === 5) { 
+        finalScore.textContent = `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` 
+        scores.appendChild(finalScore);
+    }
+    else if (computerScore === 5) { 
+        finalScore.textContent = `You lose :( Human: ${humanScore} vs. Computer: ${computerScore}`
+        scores.appendChild(finalScore);
     }
 
 }
+// function playGame() { 
 
-
-
-// -  The function needs to reset the humanChoice and computerChoice of first round. 
-function playGame() { 
-    for (var i = 1; i < 6; i++) { // for (var i = 0; i < 5; i++)
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
-    console.log(`Round ${i} complete.`)
-    }
-   if (humanScore > computerScore) { 
-    return `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ;
-   }
-   else if ( humanScore < computerScore) { 
-    return `You lose :( Human: ${humanScore} vs. Computer: ${computerScore}` ;
-   }
-   else if (humanScore == computerScore) {
-     return `It\'s a draw :| Human: ${humanScore} vs. Computer: ${computerScore}. No winners today. call the playGame() function to start a new game.` ;
-   }
+//    if (humanScore > computerScore) { 
+//     return `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ;
+//    }
+//    else if ( humanScore < computerScore) { 
+//     return `You lose :( Human: ${humanScore} vs. Computer: ${computerScore}` ;
+//    }
+//    else if (humanScore == computerScore) {
+//      return `It\'s a draw :| Human: ${humanScore} vs. Computer: ${computerScore}. No winners today. call the playGame() function to start a new game.` ;
+//    }
     
   
+// }
+
+let rockBtn = document.querySelector("#rock");
+let paperBtn = document.querySelector("#paper");
+let scissorsBtn = document.querySelector("#scissors");
+
+function handleRock() { 
+    humanChoice = "rock";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice) ;
 }
 
+function handlePaper() { 
+    humanChoice = "paper";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice) ;
+}
 
-// why is it asking me for my weapon of choice twice for each round, but only noting down the second time. 
+function handleScissors() { 
+    humanChoice = "scissors";
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice) ;
+}
 
-   
-    // function endResult () {
-    //     if (noOfRounds == 5) {
-    //          console.log(`Human: ${humanScore} vs. Computer: ${computerScore}. Game over buddy, the scores don\'t lie.`) ;
-    //                         }
-       
-        
-    
-
-    // else if (i==5 && computerScore > humanScore) {
-    //     console.log`Game over. You lose! Human:${humanScore} vs Computer:${computerScore}`
-    // }
-    // else if(i==5 && computerScore == humanScore) {
-    //     console.log(`Game over. It\'s a draw. Human: ${humanScore} vs computer: ${computerScore}`);
-    // }
+rockBtn.addEventListener("click", handleRock); 
+paperBtn.addEventListener("click", handlePaper);
+scissorsBtn.addEventListener("click", handleScissors);
 
     
     
 
 
-// - It then needs to generate a new computerChoice and ask the human again for their choice. 
-// - These new choices then need to be passed into playRound function to play a game. 
-// - The no. of rounds starts at 0. Each time playRound is played, score goes up by 1. 
-// - The steps above will repeat until no. of rounds = 5.
-// - When no. of rounds = 5, print result message, including human score and computer score. 
 
-
-
-// ask user for choice 
-// if rock return rock
-// if paper return paper 
-// if scissors return scissors
 
 
 
