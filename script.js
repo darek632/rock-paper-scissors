@@ -64,8 +64,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 let humanChoice ;
-
-
+let computerChoice;
 
 
 function playRound (humanChoice,computerChoice) { 
@@ -157,18 +156,20 @@ function playRound (humanChoice,computerChoice) {
 showScore();
 }
 
+
 function showScore () { 
     const finalScore = document.createElement("h3");
-   
+    let finalResult;
+
     if (humanScore === 5) { 
-        finalScore.textContent = `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` 
-        scores.appendChild(finalScore);
+finalResult = `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ;
     }
     else if (computerScore === 5) { 
-        finalScore.textContent = `You lose :( Human: ${humanScore} vs. Computer: ${computerScore}`
-        scores.appendChild(finalScore);
+        finalResult = `You lose :( Human: ${humanScore} vs Computer: ${computerScore}.`;
     }
 
+    finalScore.textContent = finalResult;
+    scores.appendChild(finalScore);
 }
 // function playGame() { 
 
@@ -185,31 +186,55 @@ function showScore () {
   
 // }
 
-let rockBtn = document.querySelector("#rock");
-let paperBtn = document.querySelector("#paper");
-let scissorsBtn = document.querySelector("#scissors");
+// let rockBtn = document.querySelector("#rock");
+// let paperBtn = document.querySelector("#paper");
+// let scissorsBtn = document.querySelector("#scissors");
 
-function handleRock() { 
-    humanChoice = "rock";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice) ;
-}
+let buttons = document.querySelector(".button-holder");
 
-function handlePaper() { 
-    humanChoice = "paper";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice) ;
-}
+buttons.addEventListener('click', (event) => {
+    let target = event.target;
 
-function handleScissors() { 
-    humanChoice = "scissors";
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice) ;
-}
+    switch (target.id)  { 
+        case "rock" : 
+            humanChoice = "rock";
+            
+            break;
+        case "paper" : 
+            humanChoice = "paper";
+            break;
+        case "scissors" : 
+            humanChoice = "scissors";
+           
+    }
+    if (humanChoice) {
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+    
+} )
 
-rockBtn.addEventListener("click", handleRock); 
-paperBtn.addEventListener("click", handlePaper);
-scissorsBtn.addEventListener("click", handleScissors);
+// function handleRock() { 
+//     humanChoice = "rock";
+//     let computerChoice = getComputerChoice();
+//     playRound(humanChoice,computerChoice) ;
+// }
+
+// function handlePaper() { 
+//     humanChoice = "paper";
+//     let computerChoice = getComputerChoice();
+//     playRound(humanChoice,computerChoice) ;
+// }
+
+// function handleScissors() { 
+//     humanChoice = "scissors";
+//     let computerChoice = getComputerChoice();
+//     playRound(humanChoice,computerChoice) ;
+// }
+
+// rockBtn.addEventListener("click", handleRock); 
+// paperBtn.addEventListener("click", handlePaper);
+// scissorsBtn.addEventListener("click", handleScissors);
 
     
     
