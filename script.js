@@ -17,6 +17,7 @@
 //     Math.random(1,3);
 
 
+// I am adding this line so I can try out multi line commit message in VSCode.
 
 
 
@@ -162,7 +163,7 @@ function showScore () {
     let finalResult;
 
     if (humanScore === 5) { 
-finalResult = `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ;
+finalResult = `You win :) Human: ${humanScore} vs Computer: ${computerScore}.` ; 
     }
     else if (computerScore === 5) { 
         finalResult = `You lose :( Human: ${humanScore} vs Computer: ${computerScore}.`;
